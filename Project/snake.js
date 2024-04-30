@@ -34,7 +34,6 @@ let snake_body = [document.querySelector('[X = "' + 5 + '"][Y = "' + 6 + '"]'), 
 
 console.log(snake_body);
 
-
 snake_body[0].classList.add('snake_head');
 snake_body[snake_body.length - 1].classList.add('snake_tail');
 
@@ -59,7 +58,20 @@ function createApple(){
 
     let apple_cord = randomApple();
     console.log(apple_cord);
-    apple = [document.querySelector('[X = "' + apple_cord[0] + '"][Y = "' + apple_cord[1] + '"]')];
+    apple = [document.querySelector('[X = "' + 5 + '"][Y = "' + 6 + '"]')];
+
+    let size = snake_body.length;
+    console.log(snake_body[size] == apple[0]);
+
+    while(size != 0){
+        if(snake_body[size - 1] == apple[0]){
+            let apple_cord = randomApple();
+            apple = [document.querySelector('[X = "' + apple_cord[0] + '"][Y = "' + apple_cord[1] + '"]')];
+        }
+        size--;
+    }
+    
+    
     apple[0].classList.add('apple');
 }
 createApple();
