@@ -5,7 +5,7 @@ body{
     margin: 100px;
 }
 .field{
-    /* background: url(field.jpg); */
+    background: url(field.jpg);
     width: 500px;
     height: 500px;
     margin: 0 auto;
@@ -26,13 +26,13 @@ body{
 }
 .snake_body{
     background: url(snake_body.png);
-    width: 500px;
-    height: 500px;
+    background-size: cover;
+    
 }
 .snake_tail{
     background: url(snake_tail.png);
     margin-top: 0px;
-    background-size: cover; 
+    background-size: cover;
 }
 .apple{
     background: url(apple.png);
