@@ -2,45 +2,28 @@
     box-sizing: border-box;
 }
 body{
-    margin: 100px;
+    margin: 0;
+    padding: 0;
+    background-color: white;
 }
-.field{
-    /* background: url(field.jpg); */
-    width: 500px;
-    height: 500px;
+#area{
+    position: relative;
+    background-size: cover;
+    width: 400px;
+    height: 400px;
+    margin: 50px auto;
+}
+canvas{
+    display: block;
     margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
+    margin-top: 100px;
+    border: solid 5px;
+    background-color: chartreuse;
 }
-.excel{
-    /* background-color: red; */
-    border: 1px solid black;
-    width: 50px;
-    height: 50px;
-    padding: 5px;
-}
-.snake_head{
-    background: url(snake_head.png);
-    background-position: center;
-    background-size: cover;
-
-}
-.snake_body{
-    background: url(snake_body.png);
-    background-position: center;
-    background-size: cover;
+#restart{
     
 }
-.snake_tail{
-    background: url(snake_tail.png);
-    background-position: center;
- 
-    background-size: cover;
-}
-.apple{
-    background: url(apple.png);
-    background-size: cover;
-    background-position: center;
-}
+
+
 
 

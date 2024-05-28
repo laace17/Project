@@ -1,77 +1,112 @@
-let field = document.createElement('div');
-document.body.append(field);
-field.classList.add('field');
+const game_size = 20;
+const area = 500;
+const snake_body = "white";
+const apples = new Image();
+apples.src = "apple.png";
 
-// let img = document.createElement('img');
-// img.classList.add('img');
-// img.src = 'field.jpg';
-// field.append(img);
+const canvas = document.getElementById("game");
+const ctx = canvas.getContext("2d");
+const restart = document.getElementById("restart");
 
-for(let i = 0; i < 100; i++){
-    let excel = document.createElement('div');
-    field.append(excel);
-    excel.classList.add('excel');
-}
+let snake = [{x: 14, y: 10}, {x: 13, y: 10}, {x: 12, y: 10}, {x: 11, y: 10}, {x: 10, y: 10}];
 
-let excel = document.getElementsByClassName('excel');
+let food = {x: 15, y: 10};
+let dx = 0;
+let dy = 0;
+let score = 0;
 
-let x = 1;
-let y = 10;
+let gameloop;
 
-for(let i = 0; i < excel.length; i++){
-    excel[i].setAttribute('X', x);
-    excel[i].setAttribute('Y', y);
-    if(x == 10){
-        x = 0;
-        y--;
-
-    }
-    x++;
-}
-x = 5;
-y = 5;
-let snake_body = [document.querySelector('[X = "' + 5 + '"][Y = "' + 6 + '"]'), document.querySelector('[X = "' + 5 + '"][Y = "' + 5 + '"]'), document.querySelector('[X = "' + 5 + '"][Y = "' + 4 + '"]')];
-
-console.log(snake_body);
-
-snake_body[0].classList.add('snake_head');
-snake_body[snake_body.length - 1].classList.add('snake_tail');
-
-for(let i = 1; i < snake_body.length - 1; i++){
-    snake_body[i].classList.add('snake_body');
-}
-
-let apple;
-
-// function randomBorn(){
-//     let X = Math.random() * (10 - 1) + 1;
-//     let Y = Math.random() * (10 - 1) + 1;
-//     return [X, Y];
-// }
-
-function createApple(){
-    function randomApple(){
-        let X = Math.round(Math.random() * (10 - 1) + 1);
-        let Y = Math.round(Math.random() * (10 - 1) + 1);
-        return [X, Y];
+function Press(e){
+    if(gameloop === undefined){
+        gameloop = setInterval(gameProcess, 100);
     }
 
-    let apple_cord = randomApple();
-    console.log(apple_cord);
-    apple = [document.querySelector('[X = "' + 5 + '"][Y = "' + 6 + '"]')];
+    const key = e.key;
 
-    let size = snake_body.length;
-    console.log(snake_body[size] == apple[0]);
+    if(key === "ArrowUp" && dy !== -1){
+        dx = 0;
+        dy = -1;
+    }
+    else if(key === "ArrowDown" && dy !== 1){
+        dx = 0;
+        dy = 1;
+    }
+    else if(key === "ArrowLeft" && dx !== -1){
+        dx = -1;
+        dy = 0;
+    }
+    else if(key === "ArrowRight" && dx !== 1){
+        dx = 1;
+        dy = 0;
+    }    
+}
 
-    while(size != 0){
-        if(snake_body[size - 1] == apple[0]){
-            let apple_cord = randomApple();
-            apple = [document.querySelector('[X = "' + apple_cord[0] + '"][Y = "' + apple_cord[1] + '"]')];
+function gameProcess(){
+    const head = {x: snake[0].x + dx, y: snake[0].y + dy};
+
+    if(head.x < 0 || head.x >= area / game_size || head.y < 0 || head.y >= area / game_size){
+        gameOver();
+        return; 
+    }
+
+    for(let i = 1; i < snake.length; i++){
+        if(snake[i].x === head.x && snake[i].y === head.y){
+            gameOver();
+            return; 
         }
-        size--;
+    }
+
+    snake.unshift(head);
+
+    if(head.x === food.x && head.y === food.y){
+        score += 10;
+        generateApples();
+    }
+    else{
+        snake.pop();
     }
     
-    
-    apple[0].classList.add('apple');
+    ctx.clearRect(0, 0, area, area);
+
+    drawSnake();
+
+    drawApples();
 }
-createApple();
+
+function drawSnake(){
+    snake.forEach((segment, index) => {
+        if(index === 0){
+            ctx.fillStyle = "darkblue";
+        }
+        else{
+            ctx.fillStyle = snake_body;
+        }
+        ctx.fillRect(
+            segment.x * game_size, 
+            segment.y * game_size, 
+            game_size, 
+            game_size
+        );
+    });
+}
+
+function drawApples(){
+    ctx.drawImage(apples, food.x * game_size, food.y * game_size, game_size, game_size);
+}
+
+function generateApples(){
+    food = {x: Math.floor(Math.random() * (area / game_size)), y: Math.floor(Math.random() * (area / game_size))};
+}
+
+function gameOver(){
+    clearInterval(gameloop);
+    ctx.fillStyle = "white";
+    ctx.font = "30px Arial";
+    ctx.fillText("Game Over", 180, 120);
+    ctx.fillText(`Score:  ${score}`, 200, 170);
+}
+
+generateApples();
+
+document.addEventListener('keydown', Press);
