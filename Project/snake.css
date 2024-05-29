@@ -1,10 +1,12 @@
 *{
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 body{
     margin: 0;
     padding: 0;
-    background-color: white;
+    background-image: url("field2.jpg")
 }
 #area{
     position: relative;
@@ -20,8 +22,108 @@ canvas{
     border: solid 5px;
     background-color: chartreuse;
 }
-#restart{
-    
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    display: inline-block;
+    text-transform: uppercase;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1.5vh;
+}
+
+.main{
+    background-color: #D3D3D2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 5px;
+    height: 400px;
+    width: 700px;
+    margin: auto;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.button-one {
+    background-color: #3BB273;
+    padding: 10px 2px;
+    border-radius: 10%;
+    box-shadow: -3px 3px 3px #339963;
+}
+
+.button-two {
+    background-color: #4D9DE0;
+    padding: 10px 2px;
+    border-radius: 10%;
+    box-shadow: -3px 3px 3px #2F8DDA;
+}
+
+.button-three {
+    background-color: #E15554;
+    padding: 10px 2px;
+    border-radius: 10%;
+    box-shadow: -3px 3px 3px #DA2F2F;
+}
+
+.button-four {
+    background-color: #E1BC29;
+    padding: 10px 2px;
+    border-radius: 10%;
+    box-shadow: -3px 3px 3px #C4A31C;
+}
+
+@keyframes rumble {
+    25% {
+        transform: rotate(10deg);
+    }
+
+    75% {
+        transform: rotate(-20deg);
+    }
+}
+
+@media only screen and (min-width: 768px) {
+
+    header {
+        justify-content: space-between;
+    }
+
+    header img {
+        padding-left: 10px;
+        width: 56px;
+        height: 66px;
+    }
+
+    nav ul li {
+        padding: 10px 15px;
+        margin-right: 20px;
+        font-size: 1em;
+    }
+
+    @media only screen and (min-width: 1024px) {
+
+        header {
+            justify-content: space-between;
+        }
+
+        header img {
+            padding-left: 20px;
+            width: 72px;
+            height: 82px;
+        }
+
+        nav li {
+            padding: 10px 15px;
+            margin-right: 20px;
+            font-size: 1.2em;
+        }
+    }
 }
 
 

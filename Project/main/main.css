@@ -1,5 +1,120 @@
-.play{
-    height: 100px;
-    width: 100px;
-    
+* {
+    margin: 0;
+    padding: 0;
+}
+
+nav ul {
+    list-style: none;
+}
+body{
+    background-image: url("../field2.jpg");
+}
+
+nav ul li {
+    display: inline-block;
+    text-transform: uppercase;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 3vh;
+}
+
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.button-one {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #3BB273;
+    padding: 50px 100px;
+    border-radius: 10%;
+    box-shadow: -3px 3px 3px #339963;
+    margin: 10px;
+    width: 200px;
+}
+
+.button-two {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #4D9DE0;
+    padding: 50px 100px;
+    border-radius: 10%;
+    box-shadow: -3px 3px 3px #2F8DDA;
+    margin: 10px;
+    width: 200px;
+}
+
+.button-three {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #E15554;
+    padding: 50px 100px;
+    border-radius: 10%;
+    box-shadow: -3px 3px 3px #DA2F2F;
+    margin: 10px;
+    width: 200px;
+}
+
+.button-four {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #E1BC29;
+    padding: 50px 100px;
+    border-radius: 10%;
+    box-shadow: -3px 3px 3px #C4A31C;
+    margin: 10px;
+    width: 200px;
+}
+
+@keyframes rumble {
+    25% {
+        transform: rotate(10deg);
+    }
+
+    75% {
+        transform: rotate(-20deg);
+    }
+}
+
+@media only screen and (min-width: 768px) {
+
+    header {
+        justify-content: space-between;
+    }
+
+    header img {
+        padding-left: 10px;
+        width: 56px;
+        height: 66px;
+    }
+
+    nav ul li {
+        padding: 10px 15px;
+        margin-right: 20px;
+        font-size: 1em;
+    }
+
+    @media only screen and (min-width: 1024px) {
+
+        header {
+            justify-content: space-between;
+        }
+
+        header img {
+            padding-left: 20px;
+            width: 72px;
+            height: 82px;
+        }
+
+        nav li {
+            padding: 10px 15px;
+            margin-right: 20px;
+            font-size: 1.2em;
+        }
+    }
 }
