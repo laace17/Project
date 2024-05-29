@@ -10,7 +10,7 @@ body{
     background-image: url("../field2.jpg");
 }
 
-nav ul li {
+div {
     display: inline-block;
     text-transform: uppercase;
     font-family: 'Press Start 2P', cursive;
@@ -18,12 +18,12 @@ nav ul li {
 }
 
 
-nav ul li a {
+a {
     text-decoration: none;
     color: #fff;
 }
 
-.button-one {
+.div-one {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -31,11 +31,14 @@ nav ul li a {
     padding: 50px 100px;
     border-radius: 10%;
     box-shadow: -3px 3px 3px #339963;
-    margin: 10px;
+    position: absolute; /* Add this line to position absolutely */
+    top: 15%; /* Add this line to position 50% from the top */
+    left: 50%; /* Add this line to position 50% from the left */
+    transform: translate(-50%, -50%); /* Add this line to adjust the position */
     width: 200px;
 }
 
-.button-two {
+.div-two {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -43,11 +46,17 @@ nav ul li a {
     padding: 50px 100px;
     border-radius: 10%;
     box-shadow: -3px 3px 3px #2F8DDA;
-    margin: 10px;
+    position: absolute; /* Add this line to position absolutely */
+    top: 30%; /* Add this line to position 50% from the top */
+    left: 50%; /* Add this line to position 50% from the left */
+    transform: translate(-50%, -50%); /* Add this line to adjust the position */
     width: 200px;
 }
-
-.button-three {
+.contact{
+    display: flex;
+    flex-direction: row;
+}
+.div-three {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -55,11 +64,14 @@ nav ul li a {
     padding: 50px 100px;
     border-radius: 10%;
     box-shadow: -3px 3px 3px #DA2F2F;
-    margin: 10px;
+    position: absolute; /* Add this line to position absolutely */
+    top: 45%; /* Add this line to position 50% from the top */
+    left: 50%; /* Add this line to position 50% from the left */
+    transform: translate(-50%, -50%); /* Add this line to adjust the position */
     width: 200px;
 }
 
-.button-four {
+.div-four {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -67,7 +79,10 @@ nav ul li a {
     padding: 50px 100px;
     border-radius: 10%;
     box-shadow: -3px 3px 3px #C4A31C;
-    margin: 10px;
+    position: absolute; /* Add this line to position absolutely */
+    top: 45%; /* Add this line to position 50% from the top */
+    left: 50%; /* Add this line to position 50% from the left */
+    transform: translate(-50%, -50%); /* Add this line to adjust the position */
     width: 200px;
 }
 

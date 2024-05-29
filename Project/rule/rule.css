@@ -1,0 +1,23 @@
+.parent-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height: 300px;
+    width: 500px; */
+}
+.snake_happy{
+    height: 100%;
+    width: auto;
+}
+h1, p{
+    color: white;
+    font-family: 'Press Start 2P', cursive;
+    text-align: center;
+
+}
+body{
+    background-image: url(../field2.jpg);
+}
+h1{
+    text-align: center;
+}

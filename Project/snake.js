@@ -1,8 +1,18 @@
 const game_size = 20;
-const area = 500;
+const height = 500;
+const width = 700;
 const snake_body = "white";
 const apples = new Image();
 apples.src = "apple.png";
+const head = new Image();
+head.src = "snake_head.png";
+const body = new Image();
+body.src = "snake_body.png";
+const tail = new Image();
+tail.src = "snake_tail.png";
+const field = new Image();
+field.src = "field_snake.jpg"
+
 
 const canvas = document.getElementById("game");
 const ctx = canvas.getContext("2d");
@@ -14,6 +24,7 @@ let food = {x: 15, y: 10};
 let dx = 0;
 let dy = 0;
 let score = 0;
+let last_key;
 
 let gameloop;
 
@@ -21,31 +32,48 @@ function Press(e){
     if(gameloop === undefined){
         gameloop = setInterval(gameProcess, 100);
     }
-
+    
     const key = e.key;
 
-    if(key === "ArrowUp" && dy !== -1){
-        dx = 0;
-        dy = -1;
+    switch (key) {
+        
+        case "ArrowUp":
+            if (dy !== -1 && (last_key !== "ArrowDown" || last_key === undefined || last_key === "ArrowUp")) {
+                last_key = e.key;
+                dx = 0;
+                dy = -1;
+            }
+            break;
+        case "ArrowDown":
+            if (dy !== 1 && (last_key !== "ArrowUp" || last_key === undefined || last_key === "ArrowDown")) {
+                last_key = e.key;
+                dx = 0;
+                dy = 1;
+            }
+            break;
+        case "ArrowLeft":
+            if (dx !== -1 && (last_key !== "ArrowRight" || last_key === undefined || last_key === "ArrowLeft")) {
+                last_key = e.key;
+                dx = -1;
+                dy = 0;
+            }
+            break;
+        case "ArrowRight":
+            if (dx !== 1 && (last_key !== "ArrowLeft" || last_key === undefined || last_key === "ArrowRight")) {
+                last_key = e.key;
+                dx = 1;
+                dy = 0;
+            }
+            break;
+        default:
+            break;
     }
-    else if(key === "ArrowDown" && dy !== 1){
-        dx = 0;
-        dy = 1;
-    }
-    else if(key === "ArrowLeft" && dx !== -1){
-        dx = -1;
-        dy = 0;
-    }
-    else if(key === "ArrowRight" && dx !== 1){
-        dx = 1;
-        dy = 0;
-    }    
 }
 
 function gameProcess(){
     const head = {x: snake[0].x + dx, y: snake[0].y + dy};
 
-    if(head.x < 0 || head.x >= area / game_size || head.y < 0 || head.y >= area / game_size){
+    if(head.x < 0 || head.x >= canvas.width / game_size || head.y < 0 || head.y >= canvas.height / game_size){
         gameOver();
         return; 
     }
@@ -67,7 +95,7 @@ function gameProcess(){
         snake.pop();
     }
     
-    ctx.clearRect(0, 0, area, area);
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     drawSnake();
 
@@ -75,19 +103,48 @@ function gameProcess(){
 }
 
 function drawSnake(){
+    for(let i = 0; i < canvas.height / game_size; i += game_size){
+        for(let j = 0; j < canvas.width / game_size; j += game_size){
+            if(j % 2 == 0 && i % 2 != 0){
+                ctx.fillStyle = 'green';
+            }
+            ctx.fillRect( 
+                j, 
+                i, 
+                game_size, 
+                game_size
+            );
+        }
+    }
+
     snake.forEach((segment, index) => {
         if(index === 0){
-            ctx.fillStyle = "darkblue";
+            ctx.drawImage(
+                head,
+                segment.x * game_size, 
+                segment.y * game_size, 
+                game_size, 
+                game_size
+            );
+        }
+        else if(index === snake.length - 1){
+            ctx.drawImage(
+                tail, 
+                segment.x * game_size, 
+                segment.y * game_size,
+                game_size,
+                game_size
+            );
         }
         else{
-            ctx.fillStyle = snake_body;
+            ctx.drawImage(
+                body,
+                segment.x * game_size, 
+                segment.y * game_size, 
+                game_size, 
+                game_size
+            );
         }
-        ctx.fillRect(
-            segment.x * game_size, 
-            segment.y * game_size, 
-            game_size, 
-            game_size
-        );
     });
 }
 
@@ -96,7 +153,7 @@ function drawApples(){
 }
 
 function generateApples(){
-    food = {x: Math.floor(Math.random() * (area / game_size)), y: Math.floor(Math.random() * (area / game_size))};
+    food = {x: Math.floor(Math.random() * (canvas.width / game_size)), y: Math.floor(Math.random() * (canvas.height / game_size))};
 }
 
 function gameOver(){

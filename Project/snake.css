@@ -14,6 +14,7 @@ body{
     width: 400px;
     height: 400px;
     margin: 50px auto;
+    
 }
 canvas{
     display: block;
@@ -22,16 +23,17 @@ canvas{
     border: solid 5px;
     background-color: chartreuse;
 }
-
-nav ul {
-    list-style: none;
-}
-
-nav ul li {
-    display: inline-block;
-    text-transform: uppercase;
-    font-family: 'Press Start 2P', cursive;
-    font-size: 1.5vh;
+#restart{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #3BB273;
+    padding: 50px 100px;
+    border-radius: 10%;
+    box-shadow: -3px 3px 3px #339963;
+    margin: 10px;
+    margin-left: 50% - 100px !important;
+    width: 200px;
 }
 
 .main{
@@ -43,11 +45,6 @@ nav ul li {
     height: 400px;
     width: 700px;
     margin: auto;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #fff;
 }
 
 .button-one {
