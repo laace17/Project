@@ -5,6 +5,15 @@ const snake_body = "white";
 const apples = new Image();
 apples.src = "./img/apple.png"
 
+const turnL = new Image();
+turnL.src = "./img/turn_right.png"
+const turnR = new Image();
+turnR.src = "./img/turn_left.png"
+const turnUp = new Image();
+turnUp.src = "./img/turn_up.png"
+const turnDown = new Image();
+turnR.src = "./img/turn_up2.png"
+
 const head = new Image();
 head.src = "./img/snake_head.png";
 const head2 = new Image();
@@ -53,12 +62,13 @@ let dx = 0;
 let dy = 0;
 let score = 0;
 let last_key;
+let pos;
 
 let gameloop;
 
 function Press(e) {
     if (gameloop === undefined) {
-        gameloop = setInterval(gameProcess, 1000);
+        gameloop = setInterval(gameProcess, 100);
     }
 
     const key = e.key;
@@ -69,6 +79,8 @@ function Press(e) {
                 last_key = e.key;
                 dx = 0;
                 dy = -1;
+                pos = {x: snake[0].x + dx, y: snake[0].y + dy};
+
             }
             break;
         case "ArrowDown":
@@ -76,6 +88,7 @@ function Press(e) {
                 last_key = e.key;
                 dx = 0;
                 dy = 1;
+                pos = { x: snake[0].x + dx, y: snake[0].y + dy };
             }
             break;
         case "ArrowLeft":
@@ -83,6 +96,7 @@ function Press(e) {
                 last_key = e.key;
                 dx = -1;
                 dy = 0;
+                pos = { x: snake[0].x + dx, y: snake[0].y + dy };
             }
             break;
         case "ArrowRight":
@@ -90,6 +104,7 @@ function Press(e) {
                 last_key = e.key;
                 dx = 1;
                 dy = 0;
+                pos = { x: snake[0].x + dx, y: snake[0].y + dy };
             }
             break;
         default:
@@ -149,9 +164,15 @@ const directionBody = {
     "ArrowRight": body2
 };
 
+const directionTurn = {
+    "ArrowUp": turnUp,
+    "ArrowDown": turnDown,
+    "ArrowLeft": turnL,
+    "ArrowRight": turnR
+};
+
 
 function drawSnake() {
-
     for (let i = 0; i < 20; i += 2) {
         for (let j = 0; j < 20; j += 2) {
             drawRect(i, j, clr);
@@ -171,6 +192,17 @@ function drawSnake() {
                 );
             }
         }
+        // if(index === 1){
+        //     if(last_key){
+        //         ctx.drawImage(
+        //             directionTurn[last_key],
+        //             segment.x * game_size,
+        //             segment.y * game_size,
+        //             game_size,
+        //             game_size
+        //         );
+        //     }
+        // }
         else if (index === snake.length - 1) {
             if(last_key){
                 ctx.drawImage(
