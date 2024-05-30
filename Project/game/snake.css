@@ -1,4 +1,3 @@
-@import url(https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap);
 *{
     box-sizing: border-box;
     margin: 0;
@@ -7,7 +6,7 @@
 body{
     margin: 0;
     padding: 0;
-    background-image: url("./img/field2.jpg")
+    background-image: url("field2.jpg")
 }
 #area{
     position: relative;

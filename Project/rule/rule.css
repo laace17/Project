@@ -10,13 +10,13 @@
     width: auto;
 }
 h1, p{
-    color: white;
+    color: rgb(255, 255, 255);
     font-family: 'Press Start 2P', cursive;
     text-align: center;
 
 }
 body{
-    background-image: url(../field2.jpg);
+    background-image: url(../img/field2.jpg);
 }
 h1{
     text-align: center;
