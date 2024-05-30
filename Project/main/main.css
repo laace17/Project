@@ -46,10 +46,10 @@ a {
     padding: 50px 100px;
     border-radius: 10%;
     box-shadow: -3px 3px 3px #2F8DDA;
-    position: absolute; /* Add this line to position absolutely */
-    top: 30%; /* Add this line to position 50% from the top */
-    left: 50%; /* Add this line to position 50% from the left */
-    transform: translate(-50%, -50%); /* Add this line to adjust the position */
+    position: absolute; 
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 200px;
 }
 .contact{
@@ -64,10 +64,10 @@ a {
     padding: 50px 100px;
     border-radius: 10%;
     box-shadow: -3px 3px 3px #DA2F2F;
-    position: absolute; /* Add this line to position absolutely */
-    top: 45%; /* Add this line to position 50% from the top */
-    left: 50%; /* Add this line to position 50% from the left */
-    transform: translate(-50%, -50%); /* Add this line to adjust the position */
+    position: absolute;
+    top: 45%;
+    left: 50%; 
+    transform: translate(-50%, -50%);
     width: 200px;
 }
 
@@ -79,10 +79,10 @@ a {
     padding: 50px 100px;
     border-radius: 10%;
     box-shadow: -3px 3px 3px #C4A31C;
-    position: absolute; /* Add this line to position absolutely */
-    top: 45%; /* Add this line to position 50% from the top */
-    left: 50%; /* Add this line to position 50% from the left */
-    transform: translate(-50%, -50%); /* Add this line to adjust the position */
+    position: absolute;
+    top: 45%;
+    left: 50%; 
+    transform: translate(-50%, -50%);
     width: 200px;
 }
 
