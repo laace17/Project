@@ -1,16 +1,13 @@
 * {
     margin: 0;
     padding: 0;
-}
-
-nav ul {
-    list-style: none;
+    box-sizing: border-box;
 }
 body{
     background-image: url("../field2.jpg");
 }
 
-div {
+button {
     display: inline-block;
     text-transform: uppercase;
     font-family: 'Press Start 2P', cursive;
@@ -20,7 +17,7 @@ div {
 
 a {
     text-decoration: none;
-    color: #fff;
+    color: #000000;
 }
 
 .div-one {
@@ -31,11 +28,11 @@ a {
     padding: 50px 100px;
     border-radius: 10%;
     box-shadow: -3px 3px 3px #339963;
-    position: absolute; /* Add this line to position absolutely */
-    top: 15%; /* Add this line to position 50% from the top */
-    left: 50%; /* Add this line to position 50% from the left */
-    transform: translate(-50%, -50%); /* Add this line to adjust the position */
-    width: 200px;
+    position: absolute; 
+    top: 40%; 
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    width: 50vh;
 }
 
 .div-two {
@@ -47,53 +44,40 @@ a {
     border-radius: 10%;
     box-shadow: -3px 3px 3px #2F8DDA;
     position: absolute; 
-    top: 30%;
+    top: 55%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 200px;
-}
-.contact{
-    display: flex;
-    flex-direction: row;
+    width: 50vh;
 }
 .div-three {
-    display: flex;
+    display: inline-flex;
     justify-content: center;
     align-items: center;
     background-color: #E15554;
-    padding: 50px 100px;
+    padding: 50px 50px;
     border-radius: 10%;
     box-shadow: -3px 3px 3px #DA2F2F;
     position: absolute;
-    top: 45%;
+    top: 70%;
     left: 50%; 
     transform: translate(-50%, -50%);
-    width: 200px;
+    width: 50vh;
+    
 }
 
 .div-four {
-    display: flex;
+    display: inline-flex;
     justify-content: center;
     align-items: center;
     background-color: #E1BC29;
-    padding: 50px 100px;
+    padding: 50px 50px;
     border-radius: 10%;
     box-shadow: -3px 3px 3px #C4A31C;
     position: absolute;
-    top: 45%;
+    top: 85%;
     left: 50%; 
     transform: translate(-50%, -50%);
-    width: 200px;
-}
-
-@keyframes rumble {
-    25% {
-        transform: rotate(10deg);
-    }
-
-    75% {
-        transform: rotate(-20deg);
-    }
+    width: 50vh;
 }
 
 @media only screen and (min-width: 768px) {
@@ -108,11 +92,6 @@ a {
         height: 66px;
     }
 
-    nav ul li {
-        padding: 10px 15px;
-        margin-right: 20px;
-        font-size: 1em;
-    }
 
     @media only screen and (min-width: 1024px) {
 
@@ -126,10 +105,5 @@ a {
             height: 82px;
         }
 
-        nav li {
-            padding: 10px 15px;
-            margin-right: 20px;
-            font-size: 1.2em;
-        }
     }
 }

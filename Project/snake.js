@@ -1,6 +1,6 @@
-const game_size = 20;
-const height = 500;
-const width = 700;
+const game_size = 40;
+const height = 800;
+const width = 800;
 const snake_body = "white";
 const apples = new Image();
 apples.src = "apple.png";
@@ -14,9 +14,19 @@ const field = new Image();
 field.src = "field_snake.jpg"
 
 
+
 const canvas = document.getElementById("game");
 const ctx = canvas.getContext("2d");
 const restart = document.getElementById("restart");
+
+let w = canvas.width / 20;
+let h = w;
+let clr = "rgb(105, 177, 34)";
+
+const drawRect = (x, y, color) => {
+    ctx.fillStyle = color;
+    ctx.fillRect(x * w, y * h, w, h);
+} 
 
 let snake = [{x: 14, y: 10}, {x: 13, y: 10}, {x: 12, y: 10}, {x: 11, y: 10}, {x: 10, y: 10}];
 
@@ -73,7 +83,7 @@ function Press(e){
 function gameProcess(){
     const head = {x: snake[0].x + dx, y: snake[0].y + dy};
 
-    if(head.x < 0 || head.x >= canvas.width / game_size || head.y < 0 || head.y >= canvas.height / game_size){
+    if(head.x < 0 || head.x >= width / game_size || head.y < 0 || head.y >= height / game_size){
         gameOver();
         return; 
     }
@@ -103,17 +113,11 @@ function gameProcess(){
 }
 
 function drawSnake(){
-    for(let i = 0; i < canvas.height / game_size; i += game_size){
-        for(let j = 0; j < canvas.width / game_size; j += game_size){
-            if(j % 2 == 0 && i % 2 != 0){
-                ctx.fillStyle = 'green';
-            }
-            ctx.fillRect( 
-                j, 
-                i, 
-                game_size, 
-                game_size
-            );
+
+    for(let i = 0; i < 20; i += 2){
+        for(let j = 0; j < 20; j += 2){
+            drawRect(i, j, clr);
+            drawRect(i + 1, j + 1, clr)
         }
     }
 

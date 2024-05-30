@@ -11,19 +11,21 @@ body{
 #area{
     position: relative;
     background-size: cover;
-    width: 400px;
-    height: 400px;
-    margin: 50px auto;
-    
+    width: 800px;
+    height: 800px;
+    /* margin: 50px auto; */
 }
 canvas{
+    position: absolute;
+    /* top: 1%; */
+    left: 60%;
     display: block;
-    margin: 0 auto;
-    margin-top: 100px;
-    border: solid 5px;
-    background-color: chartreuse;
+    /* margin: 0 auto; */
+    border: solid 20px rgb(39, 133, 39);
+    background-color: rgb(133, 212, 53);
 }
-#restart{
+
+/* #restart{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -34,46 +36,7 @@ canvas{
     margin: 10px;
     margin-left: 50% - 100px !important;
     width: 200px;
-}
-
-.main{
-    background-color: #D3D3D2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px 5px;
-    height: 400px;
-    width: 700px;
-    margin: auto;
-}
-
-.button-one {
-    background-color: #3BB273;
-    padding: 10px 2px;
-    border-radius: 10%;
-    box-shadow: -3px 3px 3px #339963;
-}
-
-.button-two {
-    background-color: #4D9DE0;
-    padding: 10px 2px;
-    border-radius: 10%;
-    box-shadow: -3px 3px 3px #2F8DDA;
-}
-
-.button-three {
-    background-color: #E15554;
-    padding: 10px 2px;
-    border-radius: 10%;
-    box-shadow: -3px 3px 3px #DA2F2F;
-}
-
-.button-four {
-    background-color: #E1BC29;
-    padding: 10px 2px;
-    border-radius: 10%;
-    box-shadow: -3px 3px 3px #C4A31C;
-}
+} */
 
 @keyframes rumble {
     25% {
