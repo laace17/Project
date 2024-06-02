@@ -21,3 +21,23 @@ body{
 h1{
     text-align: center;
 }
+a{
+    text-decoration: none;
+    color: black;
+}
+button{
+    font-family: 'Press Start 2P', cursive;
+    font-size: 3vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #E15554;
+    border-radius: 10%;
+    box-shadow: -3px 3px 3px #DA2F2F;
+    position: absolute; 
+    top: 92%; 
+    left: 92%;
+    transform: translate(-50%, -50%); 
+    width: 20vh;
+    height: 8vh;
+}

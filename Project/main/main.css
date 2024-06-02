@@ -4,11 +4,27 @@
     padding: 0;
     box-sizing: border-box;
 }
+.hidden {
+    display: none;
+}
+
+/* #difficultyButtons {
+    position: absolute;
+    top: 50px; 
+    right: 20px; 
+}
+
+#difficultyButtons button {
+    display: block;
+    margin-bottom: 5px;
+} */
+
 body{
     background-image: url("../img/field2.jpg");
 }
 
 button {
+
     display: inline-block;
     text-transform: uppercase;
     font-family: 'Press Start 2P', cursive;
@@ -67,7 +83,6 @@ a {
     left: 50%; 
     transform: translate(-50%, -50%);
     width: 50vh;
-    
 }
 
 .div-four {
