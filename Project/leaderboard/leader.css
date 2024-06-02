@@ -1,0 +1,22 @@
+*{
+    font-family: 'Press Start 2P';
+}
+body{
+    background-image: url(../img/field2.jpg);
+}
+table {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    border: 1px solid black;
+    border-collapse: collapse;
+    background-color: rgb(58, 192, 58);
+}
+td{
+    border: 5px solid black;
+    padding: 5px
+}
+tr{
+    border: 5px solid black;
+    padding: 5px
+}
