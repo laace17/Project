@@ -28,14 +28,14 @@ window.onload = function () {
     const body2 = new Image();
     body2.src = "./img/snake_body2.png";
 
-    const tail = new Image();
-    tail.src = "./img/snake_tail.png";
-    const tail2 = new Image();
-    tail2.src = "./img/snake_tail2.png";
-    const tail3 = new Image();
-    tail3.src = "./img/snake_tail3.png";
-    const tail4 = new Image();
-    tail4.src = "./img/snake_tail4.png";
+    // const tail = new Image();
+    // tail.src = "./img/snake_tail.png";
+    // const tail2 = new Image();
+    // tail2.src = "./img/snake_tail2.png";
+    // const tail3 = new Image();
+    // tail3.src = "./img/snake_tail3.png";
+    // const tail4 = new Image();
+    // tail4.src = "./img/snake_tail4.png";
 
     const field = new Image();
     field.src = "./img/field_snake.jpg"
@@ -64,11 +64,11 @@ window.onload = function () {
     let score1 = document.getElementById('scr');
     let apple = 0;
     let gameloop;
-
+    let speed = localStorage.getItem('speed');
 
     function Press(e) {
         if (gameloop === undefined) {
-            gameloop = setInterval(gameProcess, 100);
+            gameloop = setInterval(gameProcess, speed);
         }
 
         const key = e.key;
@@ -160,12 +160,12 @@ window.onload = function () {
         "ArrowLeft": head4,
         "ArrowRight": head2
     };
-    const directionTail = {
-        "ArrowUp": tail,
-        "ArrowDown": tail3,
-        "ArrowLeft": tail4,
-        "ArrowRight": tail2
-    };
+    // const directionTail = {
+    //     "ArrowUp": tail,
+    //     "ArrowDown": tail3,
+    //     "ArrowLeft": tail4,
+    //     "ArrowRight": tail2
+    // };
 
     const directionBody = {
         "ArrowUp": body,
@@ -174,12 +174,12 @@ window.onload = function () {
         "ArrowRight": body2
     };
 
-    const directionTurn = {
-        "ArrowUp": turnUp,
-        "ArrowDown": turnDown,
-        "ArrowLeft": turnL,
-        "ArrowRight": turnR
-    };
+    // const directionTurn = {
+    //     "ArrowUp": turnUp,
+    //     "ArrowDown": turnDown,
+    //     "ArrowLeft": turnL,
+    //     "ArrowRight": turnR
+    // };
 
 
     function drawSnake() {
@@ -202,10 +202,10 @@ window.onload = function () {
                     );
                 }
             }
-            // if(index === 1){
-            //     if(last_key){
+            // else if (index === snake.length - 1) {
+            //     if (last_key) {
             //         ctx.drawImage(
-            //             directionTurn[last_key],
+            //             directionTail[last_key],
             //             segment.x * game_size,
             //             segment.y * game_size,
             //             game_size,
@@ -213,17 +213,6 @@ window.onload = function () {
             //         );
             //     }
             // }
-            else if (index === snake.length - 1) {
-                if (last_key) {
-                    ctx.drawImage(
-                        directionTail[last_key],
-                        segment.x * game_size,
-                        segment.y * game_size,
-                        game_size,
-                        game_size
-                    );
-                }
-            }
             else {
                 if (last_key) {
                     ctx.drawImage(

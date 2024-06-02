@@ -23,8 +23,52 @@ body{
     background-image: url("../img/field2.jpg");
 }
 
+.but1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #4D9DE0;
+    padding: 50px 50px;
+    border-radius: 10%;
+    box-shadow: -3px 3px 3px #2F8DDA;
+    position: absolute; 
+    top: 42%; 
+    left: 72%;
+    transform: translate(-50%, -50%); 
+    width: 15vw;
+    height: 10vh;
+}
+.but2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #E1BC29;
+    padding: 50px 50px;
+    border-radius: 10%;
+    box-shadow: -3px 3px 3px #C4A31C;
+    position: absolute; 
+    top: 55%; 
+    left: 72%;
+    transform: translate(-50%, -50%); 
+    width: 15vw;
+    height: 10vh;
+}
+.but3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #E15554;
+    padding: 50px 50px;
+    border-radius: 10%;
+    box-shadow: -3px 3px 3px #DA2F2F;
+    position: absolute; 
+    top: 68%; 
+    left: 72%;
+    transform: translate(-50%, -50%); 
+    width: 15vw;
+    height: 10vh;
+}
 button {
-
     display: inline-block;
     text-transform: uppercase;
     font-family: 'Press Start 2P', cursive;

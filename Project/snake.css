@@ -96,6 +96,7 @@ button{
     /* margin: 50px auto; */
 }
 canvas{
+    
     margin-top: 0;
     display: block;
     /* margin: 0 auto; */
@@ -132,18 +133,6 @@ canvas{
         justify-content: space-between;
     }
 
-    header img {
-        padding-left: 10px;
-        width: 56px;
-        height: 66px;
-    }
-
-    nav ul li {
-        padding: 10px 15px;
-        margin-right: 20px;
-        font-size: 1em;
-    }
-
     @media only screen and (min-width: 1024px) {
 
         header {
@@ -154,12 +143,6 @@ canvas{
             padding-left: 20px;
             width: 72px;
             height: 82px;
-        }
-
-        nav li {
-            padding: 10px 15px;
-            margin-right: 20px;
-            font-size: 1.2em;
         }
     }
 }
