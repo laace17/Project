@@ -61,7 +61,6 @@ window.onload = function () {
     let dy = 0;
     let score = 0;
     let last_key;
-    let pos;
     let score1 = document.getElementById('scr');
     let apple = 0;
     let gameloop;
@@ -247,24 +246,27 @@ window.onload = function () {
         food = { x: Math.floor(Math.random() * (canvas.width / game_size)), y: Math.floor(Math.random() * (canvas.height / game_size)) };
     }
 
-    function restartGame(){
-        clearInterval(gameloop);
-    }
-
     function gameOver() {
         clearInterval(gameloop);
-        ctx.Style = "black";
-        ctx.font = '100px Arial';
-        ctx.fillText("Game Over", 180, 120);
-        ctx.fillText(`Score:  ${score}`, 200, 170);
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
         addResultToLocalStorage('player 1', score);
 
         let restartButton = document.createElement('button');
-        restartButton.innerHTML = 'Restart';
+        let g = document.createElement('p');
+        let g1 = document.createElement('p');
+        restartButton.innerHTML = 'Заново';
+        g.innerHTML = 'ИГРА ОКОНЧЕНА';
+        g1.innerHTML = `Счёт: ${score}`;
+        restartButton.id = "restart";
+        g.id = "gOver1";
+        g1.id = "gOver2";
+
         restartButton.onclick = function () {
-            
+            location.reload();
         }
         document.body.appendChild(restartButton);
+        document.body.appendChild(g);
+        document.body.appendChild(g1);
     }
 
     generateApples();
