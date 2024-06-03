@@ -237,9 +237,10 @@ window.onload = function () {
 
     function gameOver() {
         clearInterval(gameloop);
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        // ctx.clearRect(0, 0, canvas.width, canvas.height);
         addResultToLocalStorage('player 1', score);
 
+        let div = document.getElementById('area');
         let restartButton = document.createElement('button');
         let g = document.createElement('p');
         let g1 = document.createElement('p');
@@ -253,9 +254,12 @@ window.onload = function () {
         restartButton.onclick = function () {
             location.reload();
         }
-        document.body.appendChild(restartButton);
-        document.body.appendChild(g);
-        document.body.appendChild(g1);
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.5)';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        div.appendChild(restartButton);
+        div.appendChild(g);
+        div.appendChild(g1);
     }
 
     generateApples();

@@ -9,22 +9,35 @@ a{
     text-decoration: none;
     color: black;
 }
+
+#src{
+    border-radius: 10%;
+    background-color: rgb(133, 212, 53);
+    margin-left: 50%;
+    margin-top: 20%;
+    font-family: 'Press Start 2P';
+    font-size: 35px;
+    width: 20vw;
+    height: 10vh;
+}
+
 body{
     width: 100vw;
     height: 100vh;
     margin: 0;
     padding: 0;
     background-image: url("./img/field2.jpg");
-    display: grid;
+    /* display: grid;
     grid-template-rows: 1fr;
-    grid-template-columns: 1fr 4fr;
+    grid-template-columns: 1fr;
+    -ms-grid-column-align: center; */
 }
 #gOver1{
     font-size: 3.5vh;
     display: flex;
     position: absolute; 
     top: 35%; 
-    left: 40%;
+    left: 27%;
     width: 100vh;
     height: 10vh;
 }
@@ -33,7 +46,7 @@ body{
     display: flex;
     position: absolute; 
     top: 40%; 
-    left: 45%;
+    left: 37%;
     width: 100vh;
     height: 10vh;
 }
@@ -46,16 +59,21 @@ button{
 }
 
 .score{
+    margin-top: 3%;
+    border-radius: 10%;
     background-color: rgb(133, 212, 53);
-    border: solid 20px rgb(39, 133, 39);
-    margin-left: 20%;
-    margin-top: 20%;
     font-family: 'Press Start 2P';
     font-size: 35px;
     width: 20vw;
     height: 10vh;
-}
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* position: absolute; 
+    top: 92%; 
+    left: 40%; */
 
+}
 #restart{
     font-size: 3.5vh;
     display: flex;
@@ -65,8 +83,8 @@ button{
     border-radius: 10%;
     box-shadow: -3px 3px 3px #C4A31C;
     position: absolute; 
-    top: 50%; 
-    left: 51%;
+    top: 53%; 
+    left: 53%;
     transform: translate(-50%, -50%); 
     width: 28vh;
     height: 10vh;
@@ -76,6 +94,7 @@ button{
     font-size: 3vh;
     display: flex;
     justify-content: center;
+    justify-items: end;
     align-items: center;
     background-color: #E15554;
     border-radius: 10%;
@@ -88,7 +107,7 @@ button{
     height: 8vh;
 }
 #area{
-    left: 8%;
+
     position: relative;
     background-size: cover;
     width: 800px;
@@ -96,56 +115,46 @@ button{
     /* margin: 50px auto; */
 }
 canvas{
-    
+    border-radius: 5%;
     margin-top: 0;
     display: block;
+    display: grid;
     /* margin: 0 auto; */
     border: solid 20px rgb(39, 133, 39);
     background-color: rgb(133, 212, 53);
 }
 
-/* #restart{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #3BB273;
-    padding: 50px 100px;
-    border-radius: 10%;
-    box-shadow: -3px 3px 3px #339963;
-    margin: 10px;
-    margin-left: 50% - 100px !important;
-    width: 200px;
-} */
-
-@keyframes rumble {
-    25% {
-        transform: rotate(10deg);
-    }
-
-    75% {
-        transform: rotate(-20deg);
-    }
-}
-
-@media only screen and (min-width: 768px) {
-
-    header {
-        justify-content: space-between;
-    }
-
-    @media only screen and (min-width: 1024px) {
-
-        header {
-            justify-content: space-between;
-        }
-
-        header img {
-            padding-left: 20px;
-            width: 72px;
-            height: 82px;
-        }
-    }
-}
+@media only screen and (max-width: 768px) {
+    .game-container {
+         flex-direction: column;
+     }
+    .score {
+         font-size: 14px;
+     }
+    .buttons {
+         flex-direction: column;
+     }
+    .restart,.back {
+         padding: 10px;
+         font-size: 14px;
+     }
+ }
+ 
+ @media only screen and (max-width: 480px) {
+    .game-container {
+         width: 100%;
+     }
+    .score {
+         font-size: 12px;
+     }
+    .buttons {
+         flex-direction: column;
+     }
+    .restart,.back {
+         padding: 5px;
+         font-size: 12px;
+     }
+ }
 
 
 

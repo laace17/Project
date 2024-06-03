@@ -1,9 +1,11 @@
 @import url(https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap);
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
 .hidden {
     display: none;
 }
@@ -19,11 +21,11 @@
     margin-bottom: 5px;
 } */
 
-body{
+body {
     background-image: url("../img/field2.jpg");
 }
 
-.but1{
+.but1 {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -31,14 +33,15 @@ body{
     padding: 50px 50px;
     border-radius: 10%;
     box-shadow: -3px 3px 3px #2F8DDA;
-    position: absolute; 
-    top: 42%; 
+    position: absolute;
+    top: 42%;
     left: 72%;
-    transform: translate(-50%, -50%); 
+    transform: translate(-50%, -50%);
     width: 15vw;
     height: 10vh;
 }
-.but2{
+
+.but2 {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -46,14 +49,15 @@ body{
     padding: 50px 50px;
     border-radius: 10%;
     box-shadow: -3px 3px 3px #C4A31C;
-    position: absolute; 
-    top: 55%; 
+    position: absolute;
+    top: 55%;
     left: 72%;
-    transform: translate(-50%, -50%); 
+    transform: translate(-50%, -50%);
     width: 15vw;
     height: 10vh;
 }
-.but3{
+
+.but3 {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -61,20 +65,22 @@ body{
     padding: 50px 50px;
     border-radius: 10%;
     box-shadow: -3px 3px 3px #DA2F2F;
-    position: absolute; 
-    top: 68%; 
+    position: absolute;
+    top: 68%;
     left: 72%;
-    transform: translate(-50%, -50%); 
+    transform: translate(-50%, -50%);
     width: 15vw;
     height: 10vh;
 }
+
 button {
     display: inline-block;
     text-transform: uppercase;
     font-family: 'Press Start 2P', cursive;
     font-size: 3vh;
 }
-img{
+
+img {
     position: relative;
     top: 80px;
     left: 33%
@@ -83,6 +89,9 @@ img{
 a {
     text-decoration: none;
     color: #000000;
+}
+.fon{
+
 }
 
 .div-one {
@@ -93,10 +102,10 @@ a {
     padding: 50px 100px;
     border-radius: 10%;
     box-shadow: -3px 3px 3px #339963;
-    position: absolute; 
-    top: 40%; 
+    position: absolute;
+    top: 40%;
     left: 50%;
-    transform: translate(-50%, -50%); 
+    transform: translate(-50%, -50%);
     width: 50vh;
 }
 
@@ -108,12 +117,13 @@ a {
     padding: 50px 100px;
     border-radius: 10%;
     box-shadow: -3px 3px 3px #2F8DDA;
-    position: absolute; 
+    position: absolute;
     top: 70%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 50vh;
 }
+
 .div-three {
     display: inline-flex;
     justify-content: center;
@@ -124,7 +134,7 @@ a {
     box-shadow: -3px 3px 3px #DA2F2F;
     position: absolute;
     top: 55%;
-    left: 50%; 
+    left: 50%;
     transform: translate(-50%, -50%);
     width: 50vh;
 }
@@ -139,13 +149,12 @@ a {
     box-shadow: -3px 3px 3px #C4A31C;
     position: absolute;
     top: 87%;
-    left: 50%; 
+    left: 50%;
     transform: translate(-50%, -50%);
     width: 50vh;
 }
 
-@media only screen and (min-width: 768px) {
-
+@media only screen and (max-width: 768px) {
     header {
         justify-content: space-between;
     }
@@ -155,19 +164,19 @@ a {
         width: 56px;
         height: 66px;
     }
+}
 
 
-    @media only screen and (min-width: 1024px) {
+@media only screen and (max-width: 1024px) {
 
-        header {
-            justify-content: space-between;
-        }
-
-        header img {
-            padding-left: 20px;
-            width: 72px;
-            height: 82px;
-        }
-
+    header {
+        justify-content: space-between;
     }
+
+    img {
+        padding-left: 20px;
+        width: 500px;
+        height: 300px;
+    }
+
 }

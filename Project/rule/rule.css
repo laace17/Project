@@ -41,3 +41,27 @@ button{
     width: 20vh;
     height: 8vh;
 }
+@media only screen and (max-width: 768px) {
+
+    header {
+        justify-content: space-between;
+    }
+
+    .snake_happy {
+        padding-left: 10px;
+        width: 100px;
+        height: 100px;
+    }
+}
+@media only screen and (max-width: 1366px) {
+
+    header {
+        justify-content: space-between;
+    }
+
+    .snake_happy {
+        padding-left: 10px;
+        width: 600px;
+        height: 400px;
+    }
+}
